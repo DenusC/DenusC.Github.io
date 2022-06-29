@@ -1,6 +1,6 @@
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
 
-@import url(//fonts.googleapis.com/css?family=Cabin+Sketch|Architects+Daughter);
+@import url(https://fonts.googleapis.com/css?family=Cabin+Sketch|Architects+Daughter);
 @import url(https://cdn.jsdelivr.net/gh/asciidoctor/asciidoctor@2.0/data/stylesheets/asciidoctor-default.css); /* Default asciidoc style framework - important */
 
 /* CUSTOMISATIONS */
@@ -32,7 +32,7 @@ p{font-family: "Architects Daughter",sans-serif ! important}
 blockquote{color:var(--secondarycolor) !important}
 .quoteblock{color:var(--black)}
 .quoteblock blockquote:before{color:var(--black)}
-code{color:var(--highlightcolor);background-color: var(--black) !important}
+/* code{color:var(--highlightcolor);background-color: var(--white) !important} */
 mark{background-color: var(--highlightcolor)} /* Text highlighting color */
 pre{background-color: var(--stickynote) !important;color:var(--secondarycolor);font-family: monospace;}
 
