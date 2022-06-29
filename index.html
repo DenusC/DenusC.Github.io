@@ -65,6 +65,7 @@ table {
 }
 
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 /*! Stylesheet for CodeRay to loosely match GitHub themes | MIT License */
 pre.CodeRay{background:#f7f7f8}
@@ -317,15 +318,16 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="ruby">    println(<span class="string"><span class="delimiter">&quot;</span><span class="content">ruby</span><span class="delimiter">&quot;</span></span>);  #<b class="conum">(1)</b></code></pre>
+<pre class="CodeRay highlight"><code data-lang="ruby">    println(<span class="string"><span class="delimiter">&quot;</span><span class="content">ruby</span><span class="delimiter">&quot;</span></span>);  <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
-<ol>
-<li>
-<p>this is a callouts</p>
-</li>
-</ol>
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>this is a callouts</td>
+</tr>
+</table>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -396,7 +398,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <table>
 <tr>
 <td class="icon">
-<div class="title">Caution</div>
+<i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
 待完成
@@ -456,7 +458,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
             let mut left = 0;
             let mut right = s.len() - 1;
             while left &lt; right {
-                s[left] = (s[left]  as u8 ^ s[right]  as u8) as char; //<b class="conum">(1)</b>
+                s[left] = (s[left]  as u8 ^ s[right]  as u8) as char; <i class="conum" data-value="1"></i><b>(1)</b>
                 s[right] = (s[left]  as u8 ^ s[right]  as u8) as char;
                 s[left] = (s[left]  as u8 ^ s[right]  as u8) as char;
                 left = left + 1;
@@ -467,11 +469,12 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </div>
 </div>
 <div class="colist arabic">
-<ol>
-<li>
-<p>通过异或运算实现无额外空间交换两个数</p>
-</li>
-</ol>
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>通过异或运算实现无额外空间交换两个数</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -500,7 +503,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <table>
 <tr>
 <td class="icon">
-<div class="title">Caution</div>
+<i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
 这里没有使用双指针，待实现
@@ -537,7 +540,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <table>
 <tr>
 <td class="icon">
-<div class="title">Caution</div>
+<i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
 笨方法，待优化
@@ -555,11 +558,11 @@ table.CodeRay td.code{padding:0 0 0 .75em}
             let mut left = 0 as usize;
             let mut right = nums.len() - 1 as usize;
             let mut sorted:Vec&lt;i32&gt; = vec!();
-            while left &lt;= right { //<b class="conum">(1)</b>
+            while left &lt;= right { <i class="conum" data-value="1"></i><b>(1)</b>
                 let sqrt_left = nums[left] * nums[left];
                 let sqrt_right = nums[right] * nums[right];
-                if sqrt_left &gt;= sqrt_right {  //<b class="conum">(2)</b>
-                    sorted.push(sqrt_left); //<b class="conum">(3)</b>
+                if sqrt_left &gt;= sqrt_right {  <i class="conum" data-value="2"></i><b>(2)</b>
+                    sorted.push(sqrt_left); <i class="conum" data-value="3"></i><b>(3)</b>
                     // sorted.insert(0, sqrt_left);
                     left = left + 1;
                 } else {
@@ -575,23 +578,26 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </div>
 </div>
 <div class="colist arabic">
-<ol>
-<li>
-<p>边界必须是等于，不然会遗漏最后一个</p>
-</li>
-<li>
-<p>usize必须大于0，否则0:usize - 1 是无穷大的一个数；等号写这即0的时候做加法不做减法</p>
-</li>
-<li>
-<p>这边用push，执行速度会比用insert快很多,但是内存消耗相对多一点</p>
-</li>
-</ol>
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>边界必须是等于，不然会遗漏最后一个</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>usize必须大于0，否则0:usize - 1 是无穷大的一个数；等号写这即0的时候做加法不做减法</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>这边用push，执行速度会比用insert快很多,但是内存消耗相对多一点</td>
+</tr>
+</table>
 </div>
 <div class="admonitionblock caution">
 <table>
 <tr>
 <td class="icon">
-<div class="title">Caution</div>
+<i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
 vec 的push和insert的区别
@@ -657,9 +663,9 @@ vec 的push和insert的区别
             <span class="keyword">do</span> {
                 middle = (left + right) / <span class="integer">2</span>;
                 <span class="keyword">if</span> (target &gt; nums[middle]) {
-                        left = middle + <span class="integer">1</span>; #<b class="conum">(1)</b>
+                        left = middle + <span class="integer">1</span>; <i class="conum" data-value="1"></i><b>(1)</b>
                     } <span class="keyword">else</span> <span class="keyword">if</span> (target &lt; nums[middle]) {
-                        right = middle - <span class="integer">1</span>; #<b class="conum">(1)</b>
+                        right = middle - <span class="integer">1</span>; <i class="conum" data-value="1"></i><b>(1)</b>
                     } <span class="keyword">else</span> {
                         <span class="keyword">return</span> middle;
                     }
@@ -670,11 +676,12 @@ vec 的push和insert的区别
 </div>
 </div>
 <div class="colist arabic">
-<ol>
-<li>
-<p>写成等于，反而不利于边界判断且多余</p>
-</li>
-</ol>
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>写成等于，反而不利于边界判断且多余</td>
+</tr>
+</table>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -702,7 +709,7 @@ vec 的push和insert的区别
 <table>
 <tr>
 <td class="icon">
-<div class="title">Warning</div>
+<i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
 rust使用内存2.1M,但是耗时4ms；耗时待优化
@@ -741,7 +748,7 @@ rust使用内存2.1M,但是耗时4ms；耗时待优化
 <table>
 <tr>
 <td class="icon">
-<div class="title">Important</div>
+<i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
 内存消耗问题怎么优化
@@ -764,7 +771,7 @@ rust使用内存2.1M,但是耗时4ms；耗时待优化
         let mut right = nums.len() as i32;
         let mut middle = 0 as i32;
         while left &lt; right {
-            middle = ((right - left) &gt;&gt; 1) + left; #<b class="conum">(1)</b>
+            middle = ((right - left) &gt;&gt; 1) + left; <i class="conum" data-value="1"></i><b>(1)</b>
             if target &gt; nums[middle as usize] {
                 left = middle + 1;
             } else {
@@ -777,11 +784,12 @@ rust使用内存2.1M,但是耗时4ms；耗时待优化
 </div>
 </div>
 <div class="colist arabic">
-<ol>
-<li>
-<p><code>(right - left) / 2</code> 使用 <code>((right - left) &gt;&gt; 1)</code> 节约内存占用</p>
-</li>
-</ol>
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>(right - left) / 2</code> 使用 <code>((right - left) &gt;&gt; 1)</code> 节约内存占用</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -861,7 +869,7 @@ rust使用内存2.1M,但是耗时4ms；耗时待优化
 <table>
 <tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 <sup>归并排序</sup>是一种分而治之的思想，常用来解决大文件排序的场景；通过切分成小文件分别排序，然后两两归并排序，从而实现对大文件排序
@@ -1128,7 +1136,7 @@ Travis CI and AppVeyor template to test your Rust crate on 5 architectures and p
     DELIVERED -&gt; DELIVERED[label="ITEM_REMEDY(订单核验)"]; # 订单核验
     DELIVERED -&gt; DELIVERED[label=PART_CONFIRM]; # TMS部分签收
     DELIVERED -&gt; DELIVERED[label=MODIFY_LOGISTICS]; # 修改物流
-    DELIVERED -&gt; CONFIRMED[label="CONFIRM"]; # 确认收货 <b class="conum">(1)</b>
+    DELIVERED -&gt; CONFIRMED[label="CONFIRM"]; # 确认收货 <i class="conum" data-value="1"></i><b>(1)</b>
     DELIVERED -&gt; VOID[label="VOID(前端屏蔽)"]; # 货到付款售中整单退
     CONFIRMED -&gt; CONFIRMED[label=MODIFY_LOGISTICS]; # 修改物流信息
     CONFIRMED -&gt; VOID[label=VOID]; # 卖家取消
@@ -1139,11 +1147,12 @@ Travis CI and AppVeyor template to test your Rust crate on 5 architectures and p
 </div>
 </div>
 <div class="colist arabic">
-<ol>
-<li>
-<p>多退少补流程</p>
-</li>
-</ol>
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>多退少补流程</td>
+</tr>
+</table>
 </div>
 </li>
 <li>
