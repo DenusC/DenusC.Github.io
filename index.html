@@ -313,13 +313,9 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </tr>
 </tbody>
 </table>
-<div class="listingblock">
+<div class="imageblock">
 <div class="content">
-<pre>digraph G {
-    start -&gt; "BootstrapRegistryInitializer#initialize"
-    -&gt; "SpringApplicationRunListener@spring.factories"
-    -&gt; "prepareEnvironment"
-}</pre>
+<img src="images/test.png" alt="test" width="633" height="347">
 </div>
 </div>
 <div class="listingblock">
@@ -1107,31 +1103,9 @@ Travis CI and AppVeyor template to test your Rust crate on 5 architectures and p
 <ol class="arabic">
 <li>
 <p>订单流程</p>
-<div class="listingblock">
+<div class="imageblock">
 <div class="content">
-<pre>digraph G {
-    rankdir = LR;
-
-    INIT -&gt; INIT[label=REMEDY]; # 修改订单
-    INIT -&gt; VOID[label=CANCEL]; # 买家取消
-    INIT -&gt; VOID[label=VOID]; # 卖家取消
-    INIT -&gt; AUDITED[label=AUDIT]; # 审核
-    AUDITED -&gt; VOID[label=VOID]; # 卖家取消
-    AUDITED -&gt; AUDITED[label=REMEDY]; # 修改订单
-    AUDITED -&gt; AUDITED[label=MODIFY_CONSIGNEE]; # 修改收货人信息
-    AUDITED -&gt; DELIVERED[label=DELIVER]; # 发货
-    AUDITED -&gt; AUDITED[label=PART_CONFIRM]; # ??
-    DELIVERED -&gt; DELIVERED[label="ITEM_REMEDY(订单核验)"]; # 订单核验
-    DELIVERED -&gt; DELIVERED[label=PART_CONFIRM]; # TMS部分签收
-    DELIVERED -&gt; DELIVERED[label=MODIFY_LOGISTICS]; # 修改物流
-    DELIVERED -&gt; CONFIRMED[label="CONFIRM"]; # 确认收货 <i class="conum" data-value="1"></i><b>(1)</b>
-    DELIVERED -&gt; VOID[label="VOID(前端屏蔽)"]; # 货到付款售中整单退
-    CONFIRMED -&gt; CONFIRMED[label=MODIFY_LOGISTICS]; # 修改物流信息
-    CONFIRMED -&gt; VOID[label=VOID]; # 卖家取消
-    CONFIRMED -&gt; COMPLETED[label=COMPLETE]; # 订单完成
-    COMPLETED -&gt; COMPLETED[label=MODIFY_LOGISTICS]; # 修改物流信息
-    VOID -&gt; VOID[label=REFUND]; # 订单退款
-}</pre>
+<img src="images/order.png.png" alt="order" width="1377" height="377">
 </div>
 </div>
 <div class="colist arabic">
@@ -1145,11 +1119,9 @@ Travis CI and AppVeyor template to test your Rust crate on 5 architectures and p
 </li>
 <li>
 <p>退货边界</p>
-<div class="listingblock">
+<div class="imageblock">
 <div class="content">
-<pre>digraph G {
-
-}</pre>
+<img src="diag-26c89ac5e8e4bf99ec5803d4a8939687.png" alt="Diagram" width="11" height="11">
 </div>
 </div>
 </li>
@@ -1163,24 +1135,9 @@ Travis CI and AppVeyor template to test your Rust crate on 5 architectures and p
 <ol class="arabic">
 <li>
 <p>售前、售中、售后边界</p>
-<div class="listingblock">
+<div class="imageblock">
 <div class="content">
-<pre>digraph {
-    node [shape=box]
-    {
-        rank=same
-        edge [dir=none][color="black:black"]
-        invis1 [shape=point][style=invis]
-        invis2 [shape=point][style=invis]
-        售前 -&gt; invis1 [headclip=false]
-        invis1 -&gt; 售中 [tailclip=false]
-        售中 -&gt; invis2 [headclip=false]
-        invis2 -&gt; 售后 [tailclip=false]
-    }
-    edge [arrowhead=open]
-    订单付款 -&gt; invis1
-    客户签收 -&gt; invis2
-}</pre>
+<img src="diag-f89e6ea9a183fa031e5f8fa7810a0918.png" alt="Diagram" width="333" height="155">
 </div>
 </div>
 </li>
