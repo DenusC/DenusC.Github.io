@@ -162,7 +162,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div class="details">
 <span id="author" class="author"></span><br>
 <span id="revnumber">version 1.0,</span>
-<span id="revdate">2022-07-06</span>
+<span id="revdate">2022-07-19</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">目录</div>
@@ -196,11 +196,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#_references">References</a></li>
 </ul>
 </li>
-<li><a href="#_rust">6. rust</a>
-<ul class="sectlevel2">
-<li><a href="#_工具">6.1. 工具</a></li>
-</ul>
-</li>
+<li><a href="#_rust">6. rust</a></li>
 <li><a href="#_kafka">7. kafka</a>
 <ul class="sectlevel2">
 <li><a href="#_kafka_connect">7.1. kafka connect</a></li>
@@ -215,6 +211,16 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <ul class="sectlevel2">
 <li><a href="#_订单流程">9.1. 订单流程</a></li>
 <li><a href="#_术语">9.2. 术语</a></li>
+</ul>
+</li>
+<li><a href="#_工具">10. 工具</a>
+<ul class="sectlevel2">
+<li><a href="#_系统工具">10.1. 系统工具</a></li>
+</ul>
+</li>
+<li><a href="#_待实现idea">11. 待实现idea</a>
+<ul class="sectlevel2">
+<li><a href="#_滚动截屏">11.1. 滚动截屏</a></li>
 </ul>
 </li>
 </ul>
@@ -1043,25 +1049,7 @@ Travis CI and AppVeyor template to test your Rust crate on 5 architectures and p
 </li>
 </ol>
 </div>
-<div class="sect2">
-<h3 id="_工具"><a class="link" href="#_工具">6.1. 工具</a></h3>
-<div class="listingblock">
-<div class="content">
-<pre>digraph G {
-    rankdir=LR;
-    node[shape=rect];
-
-    rust -&gt; 常用库;
-    rust -&gt; gui;
-
-    常用库 -&gt; 权限控制 -&gt; Casbin
-    常用库 -&gt; web框架 -&gt; actix;
-    常用库 -&gt; 使用系统程序打开url -&gt; open
-}</pre>
-</div>
-</div>
 <div style="page-break-after: always;"></div>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1198,6 +1186,32 @@ Travis CI and AppVeyor template to test your Rust crate on 5 architectures and p
 </li>
 </ol>
 </div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_工具"><a class="link" href="#_工具">10. 工具</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_系统工具"><a class="link" href="#_系统工具">10.1. 系统工具</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>fireshot - 支持滚动截图</p>
+</li>
+</ul>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_待实现idea"><a class="link" href="#_待实现idea">11. 待实现idea</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_滚动截屏"><a class="link" href="#_滚动截屏">11.1. 滚动截屏</a></h3>
+
 </div>
 </div>
 </div>
